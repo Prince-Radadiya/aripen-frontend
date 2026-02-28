@@ -9,7 +9,7 @@ export default function AdminExpenses() {
     
       const handelsubmit = async () => {
     
-        const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminExpense.php', {
+        const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminExpense.php', {
           method: 'GET',
           credentials: "include",
           headers: {

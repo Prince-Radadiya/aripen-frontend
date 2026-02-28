@@ -14,7 +14,7 @@ function RemoveEmp() {
 
         }
 
-        const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminRemoveEmp.php', {
+        const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminRemoveEmp.php', {
             method: 'POST',
             credentials: "include",
             headers: {

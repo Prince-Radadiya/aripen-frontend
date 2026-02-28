@@ -30,7 +30,7 @@ function AdminLeave() {
 
   const handelsubmit = async () => {
 
-    const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminLeave.php', {
+    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminLeave.php', {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -49,7 +49,7 @@ function AdminLeave() {
 
   const handelsubmitsend = async () => {
 
-    const response = await fetch('http://aripen-backend.onrender.com/api/Admin/Leave.php', {
+    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/Leave.php', {
       method: 'POST',
       credentials: "include",
       headers: {

@@ -11,7 +11,7 @@ export default function ForgotPasswordForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://aripen-backend.onrender.com/api/auth/ForgotPassword.php", {
+      const res = await fetch("https://aripen-backend.onrender.com/api/auth/ForgotPassword.php", {
         method: "POST",
         credentials: 'include',
         headers: { "Content-Type": "application/json" },

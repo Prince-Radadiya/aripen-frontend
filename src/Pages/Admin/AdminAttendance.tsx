@@ -13,7 +13,7 @@ export default function AdminAttendance() {
   const navigate = useNavigate();
   const AdminAttendance = async () => {
 
-    const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminTotalEmployee.php', {
+    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminTotalEmployee.php', {
       method: 'GET',
       credentials: "include",
       headers: {

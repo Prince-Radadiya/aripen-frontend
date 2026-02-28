@@ -11,7 +11,7 @@ export default function ProtectedRoute({ children, allowedRoles }) {
 
 
   useEffect(() => {
-    fetch("http://aripen-backend.onrender.com/api/auth/Authcheck.php", {
+    fetch("https://aripen-backend.onrender.com/api/auth/Authcheck.php", {
       method: "GET",
       credentials: "include",
     })
@@ -33,7 +33,7 @@ export default function ProtectedRoute({ children, allowedRoles }) {
 
   const { data, setData } = useContext(context)
   useEffect(() => {
-    fetch('http://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
+    fetch('https://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
       method: 'POST',
       credentials: 'include',
       headers: {

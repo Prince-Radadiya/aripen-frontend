@@ -16,7 +16,7 @@ export default function AdminDashboard() {
 
   const handeladminTask = async () => {
 
-    const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminTask.php', {
+    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminTask.php', {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -38,7 +38,7 @@ export default function AdminDashboard() {
 
   const handeladminClient = async () => {
 
-    const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminClient.php', {
+    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminClient.php', {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -57,7 +57,7 @@ export default function AdminDashboard() {
 
   const handeladminproject = async () => {
 
-    const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminProject.php', {
+    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminProject.php', {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -75,7 +75,7 @@ export default function AdminDashboard() {
 
 
   useEffect(() => {
-    fetch('http://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
+    fetch('https://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
       method: 'POST',
       credentials: 'include',
       headers: {

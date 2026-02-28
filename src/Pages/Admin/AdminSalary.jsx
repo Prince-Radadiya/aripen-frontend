@@ -16,7 +16,7 @@ export default function AdminSalary() {
 
     // Fetch all salary records
     const fetchAllSalaries = async () => {
-        const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminSalary.php', {
+        const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminSalary.php', {
             method: 'GET',
             credentials: "include",
             headers: {

@@ -54,7 +54,7 @@ export default function AdminTasks() {
 
     const handelsubmit = async () => {
 
-        const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminTask.php', {
+        const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminTask.php', {
             method: 'GET',
             credentials: "include",
             headers: {
@@ -73,7 +73,7 @@ export default function AdminTasks() {
     }, [])
 
     const handelAsingn = async () => {
-        const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminAsingnTask.php', {
+        const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminAsingnTask.php', {
             method: 'POST',
             credentials: "include",
             headers: {
@@ -134,7 +134,7 @@ export default function AdminTasks() {
 
     useEffect(() => {
 
-        fetch("http://aripen-backend.onrender.com/api/Others/AdminTaskEmpSelect.php", {
+        fetch("https://aripen-backend.onrender.com/api/Others/AdminTaskEmpSelect.php", {
             method: 'GET',
             credentials: "include",
             headers: {
@@ -152,7 +152,7 @@ export default function AdminTasks() {
 
     useEffect(() => {
 
-        fetch("http://aripen-backend.onrender.com/api/Others/AdminProjectSelect.php", {
+        fetch("https://aripen-backend.onrender.com/api/Others/AdminProjectSelect.php", {
             method: 'POST',
             credentials: "include",
             headers: {

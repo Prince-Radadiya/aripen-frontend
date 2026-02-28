@@ -20,7 +20,7 @@ export default function ResetPasswordForm() {
     }
 
     try {
-      const res = await fetch("http://aripen-backend.onrender.com/api/auth/ResetPassword.php", {
+      const res = await fetch("https://aripen-backend.onrender.com/api/auth/ResetPassword.php", {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

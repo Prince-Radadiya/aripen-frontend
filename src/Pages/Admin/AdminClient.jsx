@@ -32,7 +32,7 @@ export default function AdminClient() {
 
   const handelsubmit = async () => {
 
-    const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminClient.php', {
+    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminClient.php', {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -65,7 +65,7 @@ export default function AdminClient() {
   const handeladdClient = async (e) => {
     e.preventDefault()
 
-    const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminAddClient.php', {
+    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminAddClient.php', {
       method: 'POST',
       credentials: "include",
       headers: {
@@ -93,7 +93,7 @@ export default function AdminClient() {
   }
 
   const handelRemoveClient = async (clientId) => {
-    const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminRemoveClient.php', {
+    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminRemoveClient.php', {
       method: 'POST',
       credentials: "include",
       headers: {
@@ -116,7 +116,7 @@ export default function AdminClient() {
 
   useEffect(() => {
 
-    fetch("http://aripen-backend.onrender.com/api/Others/AdminAllProjectids.php", {
+    fetch("https://aripen-backend.onrender.com/api/Others/AdminAllProjectids.php", {
       method: 'GET',
       credentials: "include",
       headers: {

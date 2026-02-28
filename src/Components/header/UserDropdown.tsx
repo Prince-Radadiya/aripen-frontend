@@ -23,7 +23,7 @@ export default function UserDropdown() {
   }
 
   const handleLogout = async () => {
-    await fetch("http://aripen-backend.onrender.com/api/auth/logout.php", {
+    await fetch("https://aripen-backend.onrender.com/api/auth/logout.php", {
       method: "GET",
       credentials: "include",
     });
