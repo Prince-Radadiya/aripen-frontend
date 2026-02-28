@@ -29,7 +29,7 @@ const YearlyCalendar = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/Attendance/AdminViewAttendance.php?empId=${empId}`, {
+        fetch(`http://aripen-backend.onrender.com/api/Attendance/AdminViewAttendance.php?empId=${empId}`, {
             method: "GET",
             credentials: "include",
             headers: { "Content-Type": "application/json" },

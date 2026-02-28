@@ -19,7 +19,7 @@ export default function EmployeeProjects() {
 
   const handelsubmit = async () => {
 
-    const response = await fetch('http://localhost:8000/api/employees/EmployeeProjects.php', {
+    const response = await fetch('http://aripen-backend.onrender.com/api/employees/EmployeeProjects.php', {
       method: 'GET',
       credentials: "include",
       headers: {

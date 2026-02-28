@@ -13,8 +13,9 @@ function EmployeDashboard() {
   const { projectData, setprojectData, AllTask, setAllTask, data, setData } = useContext(context)
 
   const handelsubmit = async () => {
-
-    const response = await fetch('http://localhost:8000/api/employees/EmployeeProjects.php', {
+aripen-backend.onrender.com
+// localhost:8000
+    const response = await fetch('http://aripen-backend.onrender.com/api/employees/EmployeeProjects.php', {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -30,7 +31,7 @@ function EmployeDashboard() {
   }
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/employees/EmployeeProfile.php', {
+    fetch('http://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
       method: 'POST',
       credentials: 'include',
       headers: {

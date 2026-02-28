@@ -11,7 +11,7 @@ export default function AdminInvoices() {
 
   const handelsubmit = async () => {
 
-    const response = await fetch('http://localhost:8000/api/Admin/Admininvoice.php', {
+    const response = await fetch('http://aripen-backend.onrender.com/api/Admin/Admininvoice.php', {
       method: 'GET',
       credentials: "include",
       headers: {

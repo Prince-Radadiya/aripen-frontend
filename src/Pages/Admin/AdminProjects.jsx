@@ -47,7 +47,7 @@ export default function AdminProjects() {
 
     const handelsubmit = async () => {
 
-        const response = await fetch('http://localhost:8000/api/Admin/AdminProject.php', {
+        const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminProject.php', {
             method: 'GET',
             credentials: "include",
             headers: {
@@ -90,7 +90,7 @@ export default function AdminProjects() {
             deadline
         }
 
-        const response = await fetch('http://localhost:8000/api/Admin/AdminAddProject.php', {
+        const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminAddProject.php', {
             method: 'POST',
             credentials: "include",
             headers: {
@@ -121,7 +121,7 @@ export default function AdminProjects() {
     }
 
     const handelRemoveProject = async (projectId) => {
-        const response = await fetch('http://localhost:8000/api/Admin/AdminRemoveProject.php', {
+        const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminRemoveProject.php', {
             method: 'POST',
             credentials: "include",
             headers: {
@@ -144,7 +144,7 @@ export default function AdminProjects() {
 
     useEffect(() => {
 
-        fetch("http://localhost:8000/api/Others/AdminTaskEmpSelect.php", {
+        fetch("http://aripen-backend.onrender.com/api/Others/AdminTaskEmpSelect.php", {
             method: 'GET',
             credentials: "include",
             headers: {
@@ -162,7 +162,7 @@ export default function AdminProjects() {
 
     useEffect(() => {
 
-        fetch("http://localhost:8000/api/Others/AdminAllClientIds.php", {
+        fetch("http://aripen-backend.onrender.com/api/Others/AdminAllClientIds.php", {
             method: 'GET',
             credentials: "include",
             headers: {

@@ -26,7 +26,7 @@ function AddAttandance() {
 
 
     const UpdateAttendance = async () => {
-        const response = await fetch('http://localhost:8000/api/Attendance/UpdateAttendance.php', {
+        const response = await fetch('http://aripen-backend.onrender.com/api/Attendance/UpdateAttendance.php', {
             method: 'POST',
             credentials: "include",
             headers: {
@@ -51,7 +51,7 @@ function AddAttandance() {
 
  useEffect(() => {
 
-        fetch("http://localhost:8000/api/Others/AdminTaskEmpSelect.php", {
+        fetch("http://aripen-backend.onrender.com/api/Others/AdminTaskEmpSelect.php", {
             method: 'GET',
             credentials: "include",
             headers: {

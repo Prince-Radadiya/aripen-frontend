@@ -10,7 +10,7 @@ export default function EmployeProfile() {
        const { data, setData } = useContext(context)
     
     useEffect(() => {
-      fetch('http://localhost:8000/api/employees/EmployeeProfile.php', {
+      fetch('http://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
         method: 'POST',
         credentials: 'include',
         headers: {

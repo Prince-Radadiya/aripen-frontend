@@ -29,7 +29,7 @@ export default function EmployeeLeave() {
 
   const handelLeaveRequest = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:8000/api/employees/EmployeeLeave.php', {
+    const response = await fetch('http://aripen-backend.onrender.com/api/employees/EmployeeLeave.php', {
       method: 'POST',
       credentials: "include",
       headers: {
@@ -44,7 +44,7 @@ export default function EmployeeLeave() {
 
   const getAllLeaveRequest = async () => {
 
-    const response = await fetch('http://localhost:8000/api/employees/EmployeeTotalLeave.php', {
+    const response = await fetch('http://aripen-backend.onrender.com/api/employees/EmployeeTotalLeave.php', {
       method: 'POST',
       credentials: "include",
       headers: {

@@ -7,7 +7,7 @@ const SalarySlip = ({data}) => {
     
  const handelsubmit = async () => {
 
-    const response = await fetch('http://localhost:8000/api/employees/EmployeeSlip.php', {
+    const response = await fetch('http://aripen-backend.onrender.com/api/employees/EmployeeSlip.php', {
       method: 'POST',
       credentials: "include",
       headers: {

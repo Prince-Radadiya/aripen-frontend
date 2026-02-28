@@ -19,7 +19,7 @@ export default function EmployeeAttendance() {
   const { data } = useContext(context);
 
   const fetchAttendanceData = async () => {
-    const response = await fetch('http://localhost:8000/api/Attendance/AttendanceEmp.php', {
+    const response = await fetch('http://aripen-backend.onrender.com/api/Attendance/AttendanceEmp.php', {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -39,7 +39,7 @@ export default function EmployeeAttendance() {
 
 
   const handleInPunch = async () => {
-    const response = await fetch('http://localhost:8000/api/Attendance/InPunch.php', {
+    const response = await fetch('http://aripen-backend.onrender.com/api/Attendance/InPunch.php', {
       method: 'POST',
       credentials: "include",
       headers: {
@@ -53,7 +53,7 @@ export default function EmployeeAttendance() {
 
 
   const handleOutPunch = async () => {
-    const response = await fetch('http://localhost:8000/api/Attendance/OutPunch.php', {
+    const response = await fetch('http://aripen-backend.onrender.com/api/Attendance/OutPunch.php', {
       method: 'POST',
       credentials: "include",
       headers: {
