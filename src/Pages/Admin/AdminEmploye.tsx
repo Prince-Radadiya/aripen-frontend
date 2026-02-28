@@ -105,7 +105,7 @@ export default function AdminEmployee() {
       formData.append('profilePhoto', profilePhoto);
     }
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminAddEmployee.php', {
+    const response = await fetch('http://aripen-backend.onrender.com/api/Admin/AdminAddEmployee.php', {
       method: 'POST',
       credentials: "include",
       body: formData
@@ -137,7 +137,7 @@ export default function AdminEmployee() {
 
   useEffect(() => {
 
-    fetch("https://aripen-backend.onrender.com/api/Others/AdminTaskEmpSelect.php", {
+    fetch("http://aripen-backend.onrender.com/api/Others/AdminTaskEmpSelect.php", {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -156,7 +156,7 @@ export default function AdminEmployee() {
 
   useEffect(() => {
 
-    fetch("https://aripen-backend.onrender.com/api/Others/AdminAllProjectids.php", {
+    fetch("http://aripen-backend.onrender.com/api/Others/AdminAllProjectids.php", {
       method: 'GET',
       credentials: "include",
       headers: {

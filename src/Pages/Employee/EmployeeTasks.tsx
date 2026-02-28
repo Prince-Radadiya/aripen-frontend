@@ -51,7 +51,7 @@ export default function EmployeeTasks() {
 
   const updateTaskStatus = async () => {
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/employees/EmployeeTask.php', {
+    const response = await fetch('http://aripen-backend.onrender.com/api/employees/EmployeeTask.php', {
       method: 'POST',
       credentials: "include",
       headers: {
@@ -67,7 +67,7 @@ export default function EmployeeTasks() {
 
   const handelsubmit = async () => {
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/employees/EmployeeProjects.php', {
+    const response = await fetch('http://aripen-backend.onrender.com/api/employees/EmployeeProjects.php', {
       method: 'GET',
       credentials: "include",
       headers: {

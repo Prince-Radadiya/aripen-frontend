@@ -15,7 +15,7 @@ function EmployeDashboard() {
   const handelsubmit = async () => {
 aripen-backend.onrender.com
 // localhost:8000
-    const response = await fetch('https://aripen-backend.onrender.com/api/employees/EmployeeProjects.php', {
+    const response = await fetch('http://aripen-backend.onrender.com/api/employees/EmployeeProjects.php', {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -31,7 +31,7 @@ aripen-backend.onrender.com
   }
 
   useEffect(() => {
-    fetch('https://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
+    fetch('http://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
       method: 'POST',
       credentials: 'include',
       headers: {

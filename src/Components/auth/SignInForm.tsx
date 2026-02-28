@@ -22,7 +22,7 @@ export default function SignInForm() {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://aripen-backend.onrender.com/api/auth/login.php', {
+      const response = await fetch('http://aripen-backend.onrender.com/api/auth/login.php', {
         method: 'POST',
         credentials: 'include',
         headers: {

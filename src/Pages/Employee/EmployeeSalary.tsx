@@ -25,7 +25,7 @@ export default function EmployeeSalary() {
   const handelsubmit = async () => {
 
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/employees/EmployeeSalary.php', {
+    const response = await fetch('http://aripen-backend.onrender.com/api/employees/EmployeeSalary.php', {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -46,7 +46,7 @@ export default function EmployeeSalary() {
 
   const handelsubmitt = async () => {
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
+    const response = await fetch('http://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
       method: 'POST',
       credentials: "include",
       headers: {
