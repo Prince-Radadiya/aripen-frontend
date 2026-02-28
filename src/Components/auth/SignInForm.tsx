@@ -30,6 +30,8 @@ export default function SignInForm() {
         },
         body: JSON.stringify({ email, password }),
       });
+      const text = await response.text();
+      console.log('Raw response:', text);
 
       const data = await response.json();
 
