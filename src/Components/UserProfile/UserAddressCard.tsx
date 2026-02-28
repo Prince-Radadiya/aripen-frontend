@@ -47,7 +47,7 @@ export default function UserAddressCard() {
       // console.log("Saving changes...");
       closeModal();
   
-      const response = await fetch('http://localhost:8000/api/employees/UpdateEmployeeInfo.php', {
+      const response = await fetch('https://aripen-backend.onrender.com/api/employees/UpdateEmployeeInfo.php', {
         method: 'POST',
         credentials: "include",
         headers: {
