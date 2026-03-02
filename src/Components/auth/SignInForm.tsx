@@ -34,6 +34,7 @@ export default function SignInForm() {
  
 
       const data = await response.json();
+      console.log("Full response:", data);
 
       const role = data?.session?.role?.trim().toLowerCase();
 
