@@ -13,8 +13,8 @@ export default function SignInForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const navigate = useNavigate();
-  const [email, setemail] = useState()
-  const [password, setpassword] = useState()
+  const [email, setemail] = useState("")
+  const [password, setpassword] = useState("")
 
 
 
@@ -30,8 +30,8 @@ export default function SignInForm() {
         },
         body: JSON.stringify({ email, password }),
       });
-      const text = await response.text();
-      console.log('Raw response:', text);
+    
+ 
 
       const data = await response.json();
 
@@ -75,7 +75,7 @@ export default function SignInForm() {
               </div>
 
             </div>
-            <form onSubmit={(e) => handelsubmit(e)}>
+            <form onSubmit={handelsubmit}>
               <div className="space-y-6">
                 <div>
                   <Label>
