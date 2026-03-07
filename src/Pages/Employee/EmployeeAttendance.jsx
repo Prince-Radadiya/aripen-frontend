@@ -18,7 +18,7 @@ export default function EmployeeAttendance() {
   const [attendance, setAttendance] = useState([]);
   const { data } = useContext(context);
    const local = "http://localhost:8000";
-  const production = "https://aripen-frontend.vercel.app";
+  const production = "https://aripen-backend.onrender.com";
 
   const fetchAttendanceData = async () => {
     const response = await fetch(`${production}/api/Attendance/AttendanceEmp.php`, {

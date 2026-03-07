@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 const SalarySlip = ({data}) => {
     const [emp, setemp] = useState([])
     const local = "http://localhost:8000";
-  const production = "https://aripen-frontend.vercel.app";
+  const production = "https://aripen-backend.onrender.com";
     
  const handelsubmit = async () => {
 

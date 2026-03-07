@@ -14,7 +14,7 @@ export default function AdminSalary() {
     const [selectedEmp, setSelectedEmp] = useState({});
     const [loadingEmpId, setLoadingEmpId] = useState(null);
      const local = "http://localhost:8000";
-  const production = "https://aripen-frontend.vercel.app";
+  const production = "https://aripen-backend.onrender.com";
 
     // Fetch all salary records
     const fetchAllSalaries = async () => {

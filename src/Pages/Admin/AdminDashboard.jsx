@@ -14,7 +14,7 @@ export default function AdminDashboard() {
   const [allClient, setallClient] = useState([])
   const [allproject, setallproject] = useState([])
    const local = "http://localhost:8000";
-  const production = "https://aripen-frontend.vercel.app";
+  const production = "https://aripen-backend.onrender.com";
 
   const handeladminTask = async () => {
 

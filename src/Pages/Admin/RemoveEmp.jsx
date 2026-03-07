@@ -14,7 +14,7 @@ function RemoveEmp() {
 
         }
          const local = "http://localhost:8000";
-  const production = "https://aripen-frontend.vercel.app";
+  const production = "https://aripen-backend.onrender.com";
 
         const response = await fetch(`${production}/api/Admin/AdminRemoveEmp.php`, {
             method: 'POST',

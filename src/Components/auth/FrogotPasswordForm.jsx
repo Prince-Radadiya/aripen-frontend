@@ -9,7 +9,7 @@ export default function ForgotPasswordForm() {
   const [email, setEmail] = useState("");
 
   const local = "http://localhost:8000";
-  const production = "https://aripen-frontend.vercel.app";
+  const production = "https://aripen-backend.onrender.com";
 
   const handleSubmit = async (e) => {
     e.preventDefault();

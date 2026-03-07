@@ -12,7 +12,7 @@ export default function ResetPasswordForm() {
   const [confirm, setConfirm] = useState("");
   const navigate = useNavigate();
    const local = "http://localhost:8000";
-  const production = "https://aripen-frontend.vercel.app";
+  const production = "https://aripen-backend.onrender.com";
 
   const handleSubmit = async (e) => {
     e.preventDefault();

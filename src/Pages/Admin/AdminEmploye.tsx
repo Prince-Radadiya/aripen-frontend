@@ -35,7 +35,7 @@ export default function AdminEmployee() {
   const [profilePhoto, setProfilePhoto] = useState('');
   const [errors, setErrors] = useState({});
    const local = "http://localhost:8000";
-  const production = "https://aripen-frontend.vercel.app";
+  const production = "https://aripen-backend.onrender.com";
 
   const employeeOptions = employeeList.map((id) => ({
     value: id,

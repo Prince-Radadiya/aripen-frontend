@@ -9,7 +9,7 @@ export default function ProtectedRoute({ children, allowedRoles }) {
   const [loading, setLoading] = useState(true);
   const [authorized, setAuthorized] = useState(false);
       const local = "http://localhost:8000";
-  const production = "https://aripen-frontend.vercel.app";
+  const production = "https://aripen-backend.onrender.com";
 
 
   useEffect(() => {
