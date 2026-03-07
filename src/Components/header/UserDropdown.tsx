@@ -26,7 +26,7 @@ export default function UserDropdown() {
   }
 
   const handleLogout = async () => {
-    await fetch(`${production}/api/auth/logout.php`, {
+    await fetch(`${production}/api/auth/Logout.php`, {
       method: "GET",
       credentials: "include",
     });
