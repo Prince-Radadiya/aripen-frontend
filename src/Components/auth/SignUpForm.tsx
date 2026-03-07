@@ -15,7 +15,7 @@ export default function SignUpForm() {
           to="/"
           className="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
         >
-          <ChevronLeftIcon className="size-5" />
+        <ChevronLeftIcon className="size-5" />
           Back to dashboard
         </Link>
       </div>

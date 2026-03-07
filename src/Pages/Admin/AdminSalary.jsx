@@ -13,10 +13,12 @@ export default function AdminSalary() {
     const [allsalary, setAllsalary] = useState([]);
     const [selectedEmp, setSelectedEmp] = useState({});
     const [loadingEmpId, setLoadingEmpId] = useState(null);
+     const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
     // Fetch all salary records
     const fetchAllSalaries = async () => {
-        const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminSalary.php', {
+        const response = await fetch(`${production}/api/Admin/AdminSalary.php`, {
             method: 'GET',
             credentials: "include",
             headers: {
@@ -31,7 +33,7 @@ export default function AdminSalary() {
     const fetchEmployeeDetails = async (empId) => {
         setLoadingEmpId(empId);
         try {
-            const res = await fetch(`http://aripen-backend.onrender.com/api/Admin/AdminSlip.php?empId=${empId}`, {
+            const res = await fetch(`${production}/api/Admin/AdminSlip.php?empId=${empId}`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {

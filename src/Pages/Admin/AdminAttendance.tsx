@@ -9,11 +9,13 @@ import AdminCalender from "./AdminCalender";
 export default function AdminAttendance() {
   const { adminallEmp, setadminallEmp } = useContext(context)
   const [errors, setErrors] = useState({});
+   const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
   const navigate = useNavigate();
   const AdminAttendance = async () => {
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminTotalEmployee.php', {
+    const response = await fetch(`${production}/api/Admin/AdminTotalEmployee.php`, {
       method: 'GET',
       credentials: "include",
       headers: {

@@ -5,11 +5,12 @@ import { Table, TableHeader, TableBody, TableRow, TableCell } from "../../Compon
 export default function AdminExpenses() {
 
       const [allExpense, setallExpense] = useState([])
-     
+      const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
     
       const handelsubmit = async () => {
     
-        const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminExpense.php', {
+        const response = await fetch(`${production}/api/Admin/AdminExpense.php`, {
           method: 'GET',
           credentials: "include",
           headers: {

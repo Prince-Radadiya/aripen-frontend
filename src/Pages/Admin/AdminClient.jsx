@@ -17,7 +17,8 @@ export default function AdminClient() {
   const [createdAt, setcreatedAt] = useState('')
   const [status, setstatus] = useState('')
   const [projects, setprojects] = useState('')
-
+ const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
   const [projectlist, setprojectlist] = useState([])
 
@@ -28,11 +29,13 @@ export default function AdminClient() {
     value: id,
     label: id
   }));
+  
+   
 
 
   const handelsubmit = async () => {
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminClient.php', {
+    const response = await fetch(`${production}/api/Admin/AdminClient.php`, {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -61,11 +64,12 @@ export default function AdminClient() {
     status,
     projects: StatusArray,
   }
+ 
 
   const handeladdClient = async (e) => {
     e.preventDefault()
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminAddClient.php', {
+    const response = await fetch(`${production}/api/Admin/AdminAddClient.php`, {
       method: 'POST',
       credentials: "include",
       headers: {
@@ -93,7 +97,7 @@ export default function AdminClient() {
   }
 
   const handelRemoveClient = async (clientId) => {
-    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminRemoveClient.php', {
+    const response = await fetch(`${production}/api/Admin/AdminRemoveClient.php`, {
       method: 'POST',
       credentials: "include",
       headers: {
@@ -116,7 +120,7 @@ export default function AdminClient() {
 
   useEffect(() => {
 
-    fetch("https://aripen-backend.onrender.com/api/Others/AdminAllProjectids.php", {
+    fetch(`${production}/api/Others/AdminAllProjectids.php`, {
       method: 'GET',
       credentials: "include",
       headers: {

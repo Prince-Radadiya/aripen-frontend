@@ -8,10 +8,12 @@ export default function ProtectedRoute({ children, allowedRoles }) {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [authorized, setAuthorized] = useState(false);
+      const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
 
   useEffect(() => {
-    fetch("https://aripen-backend.onrender.com/api/auth/Authcheck.php", {
+    fetch(`${production}/api/auth/Authcheck.php`, {
       method: "GET",
       credentials: "include",
     })
@@ -33,7 +35,7 @@ export default function ProtectedRoute({ children, allowedRoles }) {
 
   const { data, setData } = useContext(context)
   useEffect(() => {
-    fetch('https://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
+    fetch(`${production}/api/employees/EmployeeProfile.php`, {
       method: 'POST',
       credentials: 'include',
       headers: {

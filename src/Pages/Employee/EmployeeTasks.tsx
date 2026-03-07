@@ -22,8 +22,9 @@ export default function EmployeeTasks() {
     Id: "",
     Action: ""
   });
-
-
+  const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
+  
   const handleAcceptTask = (id: string) => {
     setTasks(prev =>
       prev.map(task =>
@@ -51,7 +52,7 @@ export default function EmployeeTasks() {
 
   const updateTaskStatus = async () => {
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/employees/EmployeeTask.php', {
+    const response = await fetch(`${production}/api/employees/EmployeeTask.php`, {
       method: 'POST',
       credentials: "include",
       headers: {
@@ -67,7 +68,7 @@ export default function EmployeeTasks() {
 
   const handelsubmit = async () => {
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/employees/EmployeeProjects.php', {
+    const response = await fetch(`${production}/api/employees/EmployeeProjects.php`, {
       method: 'GET',
       credentials: "include",
       headers: {

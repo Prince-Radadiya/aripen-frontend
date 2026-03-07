@@ -11,11 +11,13 @@ import AllData, { context } from "../../context/AllData";
 function EmployeDashboard() {
 
   const { projectData, setprojectData, AllTask, setAllTask, data, setData } = useContext(context)
+   const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
   const handelsubmit = async () => {
-aripen-backend.onrender.com
+// aripen-backend.onrender.com
 // localhost:8000
-    const response = await fetch('https://aripen-backend.onrender.com/api/employees/EmployeeProjects.php', {
+    const response = await fetch(`${production}/api/employees/EmployeeProjects.php`, {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -31,7 +33,7 @@ aripen-backend.onrender.com
   }
 
   useEffect(() => {
-    fetch('https://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
+    fetch(`${production}/api/employees/EmployeeProfile.php`, {
       method: 'POST',
       credentials: 'include',
       headers: {

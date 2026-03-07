@@ -11,6 +11,8 @@ export default function ResetPasswordForm() {
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const navigate = useNavigate();
+   const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,7 +22,7 @@ export default function ResetPasswordForm() {
     }
 
     try {
-      const res = await fetch("https://aripen-backend.onrender.com/api/auth/ResetPassword.php", {
+      const res = await fetch(`${production}/api/auth/ResetPassword.php`, {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

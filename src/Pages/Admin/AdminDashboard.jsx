@@ -13,10 +13,12 @@ export default function AdminDashboard() {
   const { projectData, AllTask, adminallEmp, TotalTaskAdmin, settotalTaskAdmin, data, setData } = useContext(context)
   const [allClient, setallClient] = useState([])
   const [allproject, setallproject] = useState([])
+   const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
   const handeladminTask = async () => {
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminTask.php', {
+    const response = await fetch(`${production}/api/Admin/AdminTask.php`, {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -38,7 +40,7 @@ export default function AdminDashboard() {
 
   const handeladminClient = async () => {
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminClient.php', {
+    const response = await fetch(`${production}/api/Admin/AdminClient.php`, {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -57,7 +59,7 @@ export default function AdminDashboard() {
 
   const handeladminproject = async () => {
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminProject.php', {
+    const response = await fetch(`${production}/api/Admin/AdminProject.php`, {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -75,7 +77,7 @@ export default function AdminDashboard() {
 
 
   useEffect(() => {
-    fetch('https://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
+    fetch(`${production}/api/employees/EmployeeProfile.php`, {
       method: 'POST',
       credentials: 'include',
       headers: {

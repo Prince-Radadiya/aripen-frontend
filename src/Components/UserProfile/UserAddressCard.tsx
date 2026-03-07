@@ -8,58 +8,60 @@ import { context } from "../../context/AllData";
 
 export default function UserAddressCard() {
   const { isOpen, openModal, closeModal } = useModal();
-   const { data, setData } = useContext(context)
- 
+  const { data, setData } = useContext(context)
 
-   const [country, setCountry] = useState()
-    const [city, setCity] = useState()
-    const [postalcode, setpostalcode] = useState()
-    const [empid, setempid] = useState()
-   
-  
-  
-  
-    // Add this after your useState declarations
-    useEffect(() => {
-      if (data) {
-          const nameParts = data?.address?.split(" ") ?? []
-        setCountry(nameParts[1] ?? "");
-        setCity(nameParts[0] ?? "");
-        setpostalcode(data.postalcode ?? "");
-        setempid(data.empId ?? "");
-        // setBio(data.designation ?? "");
-      }
-    }, [data]);
-  
- 
-    const handleSave = async (e) => {
-      e.preventDefault()
-      const formData = {
-        section: "address",
-        EmpId: data.empId,
-        country,
-        city,
-        postalcode,
-        empid,
-      };
-  
-      console.log(formData);
-      // console.log("Saving changes...");
-      closeModal();
-  
-      const response = await fetch('https://aripen-backend.onrender.com/api/employees/UpdateEmployeeInfo.php', {
-        method: 'POST',
-        credentials: "include",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-      let datas = await response.json()
-      console.log(datas);
 
-  
+  const [country, setCountry] = useState('')
+  const [city, setCity] = useState('')
+  const [postalcode, setpostalcode] = useState('')
+  const [empid, setempid] = useState('')
+
+  const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
+
+
+
+  // Add this after your useState declarations
+  useEffect(() => {
+    if (data) {
+      const nameParts = data?.address?.split(" ") ?? []
+      setCountry(nameParts[1] ?? "");
+      setCity(nameParts[0] ?? "");
+      setpostalcode(data?.postalcode ?? "");
+      setempid(data?.empId ?? "");
+      // setBio(data.designation ?? "");
+    }
+  }, [data]);
+
+
+  const handleSave = async () => {
+    // e.preventDefault()
+    const formData = {
+      section: "address",
+      EmpId: data.empId,
+      country,
+      city,
+      postalcode,
+      empid,
     };
+
+    console.log(formData);
+    // console.log("Saving changes...");
+    closeModal();
+
+    const response = await fetch(`${production}/api/employees/UpdateEmployeeInfo.php`, {
+      method: 'POST',
+      credentials: "include",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+    let datas = await response.json()
+    console.log(datas);
+
+
+  };
   return (
     <>
       <div className="p-5 border border-gray-200 rounded-2xl dark:border-gray-800 lg:p-6">
@@ -75,7 +77,7 @@ export default function UserAddressCard() {
                   Country
                 </p>
                 <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                {data?.address?.split(" ")[1] ?? ""}
+                  {data?.address?.split(" ")[1] ?? ""}
                 </p>
               </div>
 
@@ -84,7 +86,7 @@ export default function UserAddressCard() {
                   City/State
                 </p>
                 <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                 {data?.address?.split(" ")[0] ?? ""}
+                  {data?.address?.split(" ")[0] ?? ""}
                 </p>
               </div>
 
@@ -93,7 +95,7 @@ export default function UserAddressCard() {
                   Postal Code
                 </p>
                 <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                 {data.postalcode}
+                  {data.postalcode}
                 </p>
               </div>
 
@@ -148,28 +150,28 @@ export default function UserAddressCard() {
                   <Label>Country</Label>
                   <Input
                     onChange={(e) => setCountry(e.target.value)}
-                  type="text" value={country} />
+                    type="text" value={country} />
                 </div>
 
                 <div>
                   <Label>City/State</Label>
                   <Input
                     onChange={(e) => setCity(e.target.value)}
-                   type="text" value={city} />
+                    type="text" value={city} />
                 </div>
 
                 <div>
                   <Label>Postal Code</Label>
-                  <Input 
-                   onChange={(e) => setpostalcode(e.target.value)}
-                  type="text" value={postalcode} />
+                  <Input
+                    onChange={(e) => setpostalcode(e.target.value)}
+                    type="text" value={postalcode} />
                 </div>
 
                 <div>
                   <Label>EMP ID</Label>
                   <Input
-                  onChange={(e) => setempid(e.target.value)}
-                   type="text" value={empid} />
+                    onChange={(e) => setempid(e.target.value)}
+                    type="text" value={empid} />
                 </div>
               </div>
             </div>
@@ -177,7 +179,7 @@ export default function UserAddressCard() {
               <Button size="sm" variant="outline" onClick={closeModal}>
                 Close
               </Button>
-              <Button size="sm" onClick={handleSave}>
+              <Button type="button" size="sm" onClick={handleSave}>
                 Save Changes
               </Button>
             </div>

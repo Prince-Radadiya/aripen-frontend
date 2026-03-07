@@ -37,6 +37,8 @@ export default function AdminTasks() {
     const [inputProjectId, setinputProjectId] = useState('')
     const [inputDatePicker, setinputDatePicker] = useState('')
     const [inputDescription, setinputDescription] = useState("")
+     const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
 
     const employeeOptions = employeeList.map((id) => ({
@@ -54,7 +56,7 @@ export default function AdminTasks() {
 
     const handelsubmit = async () => {
 
-        const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminTask.php', {
+        const response = await fetch(`${production}/api/Admin/AdminTask.php`, {
             method: 'GET',
             credentials: "include",
             headers: {
@@ -73,7 +75,7 @@ export default function AdminTasks() {
     }, [])
 
     const handelAsingn = async () => {
-        const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminAsingnTask.php', {
+        const response = await fetch(`${production}/api/Admin/AdminAsingnTask.php`, {
             method: 'POST',
             credentials: "include",
             headers: {
@@ -134,7 +136,7 @@ export default function AdminTasks() {
 
     useEffect(() => {
 
-        fetch("https://aripen-backend.onrender.com/api/Others/AdminTaskEmpSelect.php", {
+        fetch(`${production}/api/Others/AdminTaskEmpSelect.php`, {
             method: 'GET',
             credentials: "include",
             headers: {
@@ -152,7 +154,7 @@ export default function AdminTasks() {
 
     useEffect(() => {
 
-        fetch("https://aripen-backend.onrender.com/api/Others/AdminProjectSelect.php", {
+        fetch(`${production}/api/Others/AdminProjectSelect.php`, {
             method: 'POST',
             credentials: "include",
             headers: {

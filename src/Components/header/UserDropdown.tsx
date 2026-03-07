@@ -12,6 +12,9 @@ export default function UserDropdown() {
   const navigate = useNavigate();
 
   const { data, setData } = useContext(context)
+    const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
+
 
 
   function toggleDropdown() {
@@ -23,7 +26,7 @@ export default function UserDropdown() {
   }
 
   const handleLogout = async () => {
-    await fetch("https://aripen-backend.onrender.com/api/auth/logout.php", {
+    await fetch(`${production}/api/auth/logout.php`, {
       method: "GET",
       credentials: "include",
     });

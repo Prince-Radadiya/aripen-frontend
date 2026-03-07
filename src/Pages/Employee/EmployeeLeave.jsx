@@ -41,10 +41,12 @@ export default function EmployeeLeave() {
     setDescription(' ')
     setReason('')
   }
+   const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
   const getAllLeaveRequest = async () => {
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/employees/EmployeeTotalLeave.php', {
+    const response = await fetch(`${production}/api/employees/EmployeeTotalLeave.php`, {
       method: 'POST',
       credentials: "include",
       headers: {

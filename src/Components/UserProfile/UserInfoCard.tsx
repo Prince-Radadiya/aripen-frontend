@@ -9,12 +9,13 @@ import { context } from "../../context/AllData";
 export default function UserInfoCard() {
   const { isOpen, openModal, closeModal } = useModal();
   const { data, setData } = useContext(context)
-  const [firstname, setFirstname] = useState()
-  const [lastname, setlastname] = useState()
-  const [email, setEmail] = useState()
-  const [Phone, setPhone] = useState()
-  const [bio, setBio] = useState()
-
+  const [firstname, setFirstname] = useState('')
+  const [lastname, setlastname] = useState('')
+  const [email, setEmail] = useState('')
+  const [Phone, setPhone] = useState('')
+  const [bio, setBio] = useState('')
+const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
 
   // Add this after your useState declarations
@@ -32,8 +33,8 @@ export default function UserInfoCard() {
 
 
 
-  const handleSave = async (e) => {
-    e.preventDefault()
+  const handleSave = async () => {
+    
     const formData = {
       section: "info",
       EmpId: data.empId,
@@ -49,7 +50,7 @@ export default function UserInfoCard() {
     closeModal();
 
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/employees/UpdateEmployeeInfo.php', {
+    const response = await fetch(`${production}/api/employees/UpdateEmployeeInfo.php`, {
       method: 'POST',
       credentials: "include",
       headers: {
@@ -155,7 +156,7 @@ export default function UserInfoCard() {
             </p>
           </div>
           <form
-            onSubmit={(e) => handleSave(e)}
+            onSubmit={(e) => handleSave()}
             className="flex flex-col">
             <div className="custom-scrollbar h-[450px] overflow-y-auto px-2 pb-3">
               <div>

@@ -4,10 +4,12 @@ import { useLocation } from "react-router-dom";
 
 const AdminSalarySlips = ({ data }) => {
     const [emp, setemp] = useState([])
+     const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
     const handelsubmit = async () => {
 
-        const response = await fetch('https://aripen-backend.onrender.com/api/employees/EmployeeSlip.php', {
+        const response = await fetch(`${production}/api/employees/EmployeeSlip.php`, {
             method: 'POST',
             credentials: "include",
             headers: {

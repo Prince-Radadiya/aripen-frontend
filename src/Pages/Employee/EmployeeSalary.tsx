@@ -21,11 +21,13 @@ function getStatusStyle(status: string) {
 
 export default function EmployeeSalary() {
   const [salary, setsalary] = useState([])
+   const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
   const handelsubmit = async () => {
 
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/employees/EmployeeSalary.php', {
+    const response = await fetch(`${production}/api/employees/EmployeeSalary.php`, {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -46,7 +48,7 @@ export default function EmployeeSalary() {
 
   const handelsubmitt = async () => {
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
+    const response = await fetch(`${production}/api/employees/EmployeeProfile.php`, {
       method: 'POST',
       credentials: "include",
       headers: {

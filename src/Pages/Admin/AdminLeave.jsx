@@ -46,10 +46,11 @@ function AdminLeave() {
     handelsubmit()
   }, [])
 
-
+   const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
   const handelsubmitsend = async () => {
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/Leave.php', {
+    const response = await fetch(`${production}/api/Admin/Leave.php`, {
       method: 'POST',
       credentials: "include",
       headers: {

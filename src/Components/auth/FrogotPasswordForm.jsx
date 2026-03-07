@@ -8,10 +8,13 @@ import toast from "react-hot-toast";
 export default function ForgotPasswordForm() {
   const [email, setEmail] = useState("");
 
+  const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("https://aripen-backend.onrender.com/api/auth/ForgotPassword.php", {
+      const res = await fetch(`${production}/api/auth/ForgotPassword.php`, {
         method: "POST",
         credentials: 'include',
         headers: { "Content-Type": "application/json" },

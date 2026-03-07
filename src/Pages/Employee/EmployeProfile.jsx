@@ -8,9 +8,11 @@ import { useContext, useEffect } from "react";
 
 export default function EmployeProfile() {
        const { data, setData } = useContext(context)
+       const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
     
     useEffect(() => {
-      fetch('https://aripen-backend.onrender.com/api/employees/EmployeeProfile.php', {
+      fetch(`${production}/api/employees/EmployeeProfile.php`, {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -20,7 +22,7 @@ export default function EmployeProfile() {
       })
         .then((response) => response.json())
         .then((data) => {
-          if (data && data.UserData) {F
+          if (data && data.UserData) {
             setData(data.UserData);
           } else {
             console.log("No UserData found in response:", data);

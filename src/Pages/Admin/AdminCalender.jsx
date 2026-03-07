@@ -21,10 +21,12 @@ function AdminCalender() {
     const [workData, setWorkData] = useState({});
     const [leaveData, setLeaveData] = useState({});
     
+     const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
     console.log("Formatted Events:", events);
     useEffect(() => {
-        fetch(`http://aripen-backend.onrender.com/api/Attendance/AdminViewAttendance.php?empId=${empId}`, {
+        fetch(`${production}/api/Attendance/AdminViewAttendance.php?empId=${empId}`, {
             method: "GET",
             credentials: "include",
             headers: { "Content-Type": "application/json" },

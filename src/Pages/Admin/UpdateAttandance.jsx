@@ -23,10 +23,12 @@ function AddAttandance() {
         value: id,
         label: id
     }));
+     const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
 
     const UpdateAttendance = async () => {
-        const response = await fetch('https://aripen-backend.onrender.com/api/Attendance/UpdateAttendance.php', {
+        const response = await fetch(`${production}/api/Attendance/UpdateAttendance.php`, {
             method: 'POST',
             credentials: "include",
             headers: {
@@ -51,7 +53,7 @@ function AddAttandance() {
 
  useEffect(() => {
 
-        fetch("https://aripen-backend.onrender.com/api/Others/AdminTaskEmpSelect.php", {
+        fetch(`${production}/api/Others/AdminTaskEmpSelect.php`, {
             method: 'GET',
             credentials: "include",
             headers: {

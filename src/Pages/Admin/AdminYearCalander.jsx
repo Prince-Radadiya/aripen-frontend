@@ -16,6 +16,8 @@ const localizer = dateFnsLocalizer({
     getDay,
     locales,
 });
+ const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
 
 
@@ -29,7 +31,7 @@ const YearlyCalendar = () => {
 
 
     useEffect(() => {
-        fetch(`http://aripen-backend.onrender.com/api/Attendance/AdminViewAttendance.php?empId=${empId}`, {
+        fetch(`${production}/api/Attendance/AdminViewAttendance.php?empId=${empId}`, {
             method: "GET",
             credentials: "include",
             headers: { "Content-Type": "application/json" },

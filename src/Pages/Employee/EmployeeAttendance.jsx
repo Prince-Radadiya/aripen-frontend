@@ -17,9 +17,11 @@ export default function EmployeeAttendance() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [attendance, setAttendance] = useState([]);
   const { data } = useContext(context);
+   const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
   const fetchAttendanceData = async () => {
-    const response = await fetch('https://aripen-backend.onrender.com/api/Attendance/AttendanceEmp.php', {
+    const response = await fetch(`${production}/api/Attendance/AttendanceEmp.php`, {
       method: 'GET',
       credentials: "include",
       headers: {
@@ -39,7 +41,7 @@ export default function EmployeeAttendance() {
 
 
   const handleInPunch = async () => {
-    const response = await fetch('https://aripen-backend.onrender.com/api/Attendance/InPunch.php', {
+    const response = await fetch(`${production}/api/Attendance/InPunch.php`, {
       method: 'POST',
       credentials: "include",
       headers: {
@@ -53,7 +55,7 @@ export default function EmployeeAttendance() {
 
 
   const handleOutPunch = async () => {
-    const response = await fetch('https://aripen-backend.onrender.com/api/Attendance/OutPunch.php', {
+    const response = await fetch(`${production}/api/Attendance/OutPunch.php`, {
       method: 'POST',
       credentials: "include",
       headers: {

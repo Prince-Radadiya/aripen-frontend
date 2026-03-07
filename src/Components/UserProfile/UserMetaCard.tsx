@@ -11,11 +11,13 @@ export default function UserMetaCard() {
 
   const { data, setData } = useContext(context)
 
-  const [firstname, setFirstname] = useState()
-  const [lastname, setlastname] = useState()
-  const [email, setEmail] = useState()
-  const [Phone, setPhone] = useState()
-  const [bio, setBio] = useState()
+  const [firstname, setFirstname] = useState('')
+  const [lastname, setlastname] = useState('')
+  const [email, setEmail] = useState('')
+  const [Phone, setPhone] = useState('')
+  const [bio, setBio] = useState('')
+  const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
 
 
@@ -32,8 +34,8 @@ export default function UserMetaCard() {
   }, [data]);
 
 
-  const handleSave = async (e) => {
-    e.preventDefault()
+  const handleSave = async () => {
+    
     const formData = {
       section: "meta",
       EmpId: data.empId,
@@ -49,7 +51,7 @@ export default function UserMetaCard() {
     closeModal();
 
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/employees/UpdateEmployeeInfo.php', {
+    const response = await fetch(`${production}/api/employees/UpdateEmployeeInfo.php`, {
       method: 'POST',
       credentials: "include",
       headers: {

@@ -44,10 +44,12 @@ export default function AdminProjects() {
         value: id,
         label: id
     }));
+     const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
     const handelsubmit = async () => {
 
-        const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminProject.php', {
+        const response = await fetch(`${production}/api/Admin/AdminProject.php`, {
             method: 'GET',
             credentials: "include",
             headers: {
@@ -90,7 +92,7 @@ export default function AdminProjects() {
             deadline
         }
 
-        const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminAddProject.php', {
+        const response = await fetch(`${production}/api/Admin/AdminAddProject.php`, {
             method: 'POST',
             credentials: "include",
             headers: {
@@ -121,7 +123,7 @@ export default function AdminProjects() {
     }
 
     const handelRemoveProject = async (projectId) => {
-        const response = await fetch('https://aripen-backend.onrender.com/api/Admin/AdminRemoveProject.php', {
+        const response = await fetch(`${production}/api/Admin/AdminRemoveProject.php`, {
             method: 'POST',
             credentials: "include",
             headers: {
@@ -144,7 +146,7 @@ export default function AdminProjects() {
 
     useEffect(() => {
 
-        fetch("https://aripen-backend.onrender.com/api/Others/AdminTaskEmpSelect.php", {
+        fetch(`${production}/api/Others/AdminTaskEmpSelect.php`, {
             method: 'GET',
             credentials: "include",
             headers: {
@@ -162,7 +164,7 @@ export default function AdminProjects() {
 
     useEffect(() => {
 
-        fetch("https://aripen-backend.onrender.com/api/Others/AdminAllClientIds.php", {
+        fetch(`${production}/api/Others/AdminAllClientIds.php`, {
             method: 'GET',
             credentials: "include",
             headers: {

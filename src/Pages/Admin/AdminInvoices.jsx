@@ -7,11 +7,12 @@ export default function AdminInvoices() {
 
 
   const [allinvoice, setallinvoice] = useState([])
-
+ const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
   const handelsubmit = async () => {
 
-    const response = await fetch('https://aripen-backend.onrender.com/api/Admin/Admininvoice.php', {
+    const response = await fetch(`${production}/api/Admin/Admininvoice.php`, {
       method: 'GET',
       credentials: "include",
       headers: {

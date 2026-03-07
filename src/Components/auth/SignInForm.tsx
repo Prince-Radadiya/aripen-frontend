@@ -16,13 +16,14 @@ export default function SignInForm() {
   const [email, setemail] = useState("")
   const [password, setpassword] = useState("")
 
-
+  const local = "http://localhost:8000";
+  const production = "https://aripen-frontend.vercel.app";
 
   const handelsubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
 
     try {
-      const response = await fetch('https://aripen-backend.onrender.com/api/auth/Login.php', {
+      const response = await fetch(`${production}/api/auth/Login.php`, {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -30,11 +31,24 @@ export default function SignInForm() {
         },
         body: JSON.stringify({ email, password }),
       });
-    
- 
+
+
 
       const data = await response.json();
       console.log("Full response:", data);
+
+      if (data.status === "user not found") {
+        toast.error("User not found");
+        return;
+      }
+
+      if (data.status === "wrong password") {
+        toast.error("Wrong password");
+        return;
+      }
+
+      // localStorage.setItem("user", JSON.stringify(data.UserData));
+      // localStorage.setItem("session", JSON.stringify(data.session));
 
       const role = data?.session?.role?.trim().toLowerCase();
 
@@ -109,7 +123,7 @@ export default function SignInForm() {
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  
+
                   <Link
                     to="/forgot-password"
                     className="text-sm text-brand-500 hover:text-brand-600 dark:text-brand-400"
